@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://b6pwnlwjkmhma"
+path="res://.godot/imported/nurse_game_intro.dialogue-c36179fc70b5f688989ecc8356813efa.tres"
+
+[deps]
+
+source_file="res://nurse_game_intro.dialogue"
+dest_files=["res://.godot/imported/nurse_game_intro.dialogue-c36179fc70b5f688989ecc8356813efa.tres"]
+
+[params]
+
+defaults=true

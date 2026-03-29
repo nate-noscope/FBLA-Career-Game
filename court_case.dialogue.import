@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bbm4bo8srkh27"
+path="res://.godot/imported/court_case.dialogue-d349cf4d1f555d77a0ad4db6643c75a6.tres"
+
+[deps]
+
+source_file="res://court_case.dialogue"
+dest_files=["res://.godot/imported/court_case.dialogue-d349cf4d1f555d77a0ad4db6643c75a6.tres"]
+
+[params]
+
+defaults=true

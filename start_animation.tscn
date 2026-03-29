@@ -1,0 +1,313 @@
+[gd_scene load_steps=57 format=3 uid="uid://b87bvkqejgtf2"]
+
+[ext_resource type="Script" uid="uid://drvy54gsjf2df" path="res://start_animation.gd" id="1_3ifvo"]
+[ext_resource type="Texture2D" uid="uid://bml7w6eub8tkh" path="res://la sunset earthquake/la sunset earthquake1.png" id="1_4vawr"]
+[ext_resource type="Texture2D" uid="uid://c3xb8inoxfqvi" path="res://la sunset earthquake/la sunset earthquake13.png" id="2_liagk"]
+[ext_resource type="Texture2D" uid="uid://kq4x3sfvfm5s" path="res://la sunset earthquake/la sunset earthquake2.png" id="3_8mpt8"]
+[ext_resource type="Texture2D" uid="uid://biqx65bsm62sg" path="res://la sunset earthquake/la sunset earthquake14.png" id="3_mni22"]
+[ext_resource type="Texture2D" uid="uid://bveawuoy2wkc3" path="res://la sunset earthquake/la sunset earthquake15.png" id="4_8gyg7"]
+[ext_resource type="Texture2D" uid="uid://ce5ga446cyh3j" path="res://la sunset earthquake/la sunset earthquake3.png" id="4_38hax"]
+[ext_resource type="Texture2D" uid="uid://dk3jo427l2qww" path="res://la sunset earthquake/la sunset earthquake16.png" id="5_1n3q7"]
+[ext_resource type="Texture2D" uid="uid://da3xpiv4o1h3s" path="res://la sunset earthquake/la sunset earthquake4.png" id="5_ywklq"]
+[ext_resource type="Texture2D" uid="uid://cm5o4r1csuo4c" path="res://la sunset earthquake/la sunset earthquake17.png" id="6_6t181"]
+[ext_resource type="Texture2D" uid="uid://ct2qr5pdn2abt" path="res://la sunset earthquake/la sunset earthquake5.png" id="6_e6fl6"]
+[ext_resource type="Texture2D" uid="uid://bx4t7or61qq1w" path="res://la sunset earthquake/la sunset earthquake18.png" id="7_wbc1i"]
+[ext_resource type="Texture2D" uid="uid://dwlprgby5w38u" path="res://la sunset earthquake/la sunset earthquake19.png" id="8_ep6e7"]
+[ext_resource type="Texture2D" uid="uid://c712fn5gmemw5" path="res://la sunset earthquake/la sunset earthquake20.png" id="9_l7i0m"]
+[ext_resource type="Texture2D" uid="uid://cbxj5i5mgwmvl" path="res://la sunset earthquake/la sunset earthquake21.png" id="10_wbmvr"]
+[ext_resource type="Texture2D" uid="uid://cwtchkpivqtw7" path="res://la sunset earthquake/la sunset earthquake22.png" id="11_ejpbo"]
+[ext_resource type="Texture2D" uid="uid://ddwu600x5v4kw" path="res://la sunset earthquake/la sunset earthquake23.png" id="12_bfi77"]
+[ext_resource type="Texture2D" uid="uid://dsa2fw6nvjmdp" path="res://la sunset earthquake/la sunset earthquake24.png" id="13_3fuv8"]
+[ext_resource type="Texture2D" uid="uid://wn38ai3hyngj" path="res://la sunset earthquake/la sunset earthquake25.png" id="14_a43wr"]
+[ext_resource type="Texture2D" uid="uid://dpra2pf5r0v8x" path="res://la sunset earthquake/la sunset earthquake26.png" id="15_pge2w"]
+[ext_resource type="Texture2D" uid="uid://bo6sd73y3f41h" path="res://la sunset earthquake/la sunset earthquake27.png" id="16_oa3pm"]
+[ext_resource type="Texture2D" uid="uid://c02cmyt23xtp2" path="res://la sunset earthquake/la sunset earthquake28.png" id="17_1ridi"]
+[ext_resource type="Texture2D" uid="uid://c0hl6goplr21k" path="res://la sunset earthquake/la sunset earthquake29.png" id="18_foehx"]
+[ext_resource type="Texture2D" uid="uid://csxoshfmk0oay" path="res://la sunset earthquake/la sunset earthquake30.png" id="19_y5e0m"]
+[ext_resource type="Texture2D" uid="uid://bh60spwi60x8" path="res://la sunset earthquake/la sunset earthquake32.png" id="21_dqveo"]
+[ext_resource type="Texture2D" uid="uid://c2w2qas3vwpbv" path="res://la economic downturn/la-economic-downturn1.png" id="23_3fuv8"]
+[ext_resource type="Texture2D" uid="uid://ieb8v5rckiub" path="res://la economic downturn/la-economic-downturn2.png" id="24_a43wr"]
+[ext_resource type="Texture2D" uid="uid://cpwhf7ijmn3ey" path="res://la economic downturn/la-economic-downturn3.png" id="25_pge2w"]
+[ext_resource type="Texture2D" uid="uid://kerrcqbmix0g" path="res://la economic downturn/la-economic-downturn5.png" id="26_oa3pm"]
+[ext_resource type="Texture2D" uid="uid://cjeg2l00fs3jh" path="res://la economic downturn/la-economic-downturn6.png" id="27_1ridi"]
+[ext_resource type="Texture2D" uid="uid://buc2e7iq8icnt" path="res://la economic downturn/la-economic-downturn7.png" id="28_foehx"]
+[ext_resource type="Texture2D" uid="uid://dety1xf15878q" path="res://la economic downturn/la-economic-downturn8.png" id="29_y5e0m"]
+[ext_resource type="Texture2D" uid="uid://di53tsii6fvhq" path="res://la economic downturn/la-economic-downturn9.png" id="30_j4mcv"]
+[ext_resource type="Texture2D" uid="uid://2u6lqtj4odan" path="res://la economic downturn/la-economic-downturn10.png" id="31_dqveo"]
+[ext_resource type="Texture2D" uid="uid://ca5as1cu44248" path="res://la economic downturn/la-economic-downturn11.png" id="32_i5u1m"]
+[ext_resource type="Texture2D" uid="uid://bmyrrjtjy0b0d" path="res://la economic downturn/la-economic-downturn13.png" id="33_ad732"]
+[ext_resource type="Texture2D" uid="uid://djo4orye44p52" path="res://la economic downturn/la-economic-downturn14.png" id="34_aivgu"]
+[ext_resource type="Texture2D" uid="uid://cym5xkdl60yxf" path="res://next-arrow-indicator.ase" id="35_mni22"]
+[ext_resource type="Texture2D" uid="uid://b8v0nim58mbxj" path="res://la economic downturn/la-economic-downturn15.png" id="35_yqfqw"]
+[ext_resource type="Texture2D" uid="uid://b7288yu37t81t" path="res://la economic downturn/la-economic-downturn16.png" id="36_0nl1j"]
+[ext_resource type="Texture2D" uid="uid://b6aibvhgy6rc8" path="res://la economic downturn/la-economic-downturn17.png" id="37_x5gmt"]
+[ext_resource type="Texture2D" uid="uid://d2grxohnxnqoa" path="res://la economic downturn/la-economic-downturn18.png" id="38_baubm"]
+[ext_resource type="Texture2D" uid="uid://rth8kjxin1c2" path="res://la economic downturn/la-economic-downturn19.png" id="39_70nwi"]
+[ext_resource type="Texture2D" uid="uid://clgl38btw1svd" path="res://la economic downturn/la-economic-downturn20.png" id="40_ethql"]
+[ext_resource type="Texture2D" uid="uid://dqvhhfd4olurq" path="res://la economic downturn/la-economic-downturn21.png" id="41_cdfvv"]
+[ext_resource type="Texture2D" uid="uid://bvmt5ys81y3fa" path="res://la economic downturn/la-economic-downturn23.png" id="42_7x133"]
+[ext_resource type="Texture2D" uid="uid://l3y5jt11d6xc" path="res://la economic downturn/la-economic-downturn22.png" id="43_7rj30"]
+[ext_resource type="Texture2D" uid="uid://i6w5q1yaledn" path="res://la economic downturn/la-economic-downturn24.png" id="44_vpedg"]
+[ext_resource type="Texture2D" uid="uid://diqcfv25yynf8" path="res://la economic downturn/la-economic-downturn25.png" id="45_b0di6"]
+[ext_resource type="Texture2D" uid="uid://dom5q75hf5itr" path="res://la economic downturn/la-economic-downturn26.png" id="46_x4osh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n1vd5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_liagk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mni22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8gyg7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_1n3q7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_6t181")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_wbc1i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ep6e7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_l7i0m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_wbmvr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ejpbo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_bfi77")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_3fuv8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_a43wr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_pge2w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_oa3pm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_1ridi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_foehx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_y5e0m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_dqveo")
+}],
+"loop": false,
+"name": &"Earthquake",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_3fuv8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_a43wr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_pge2w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_pge2w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_oa3pm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_1ridi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_foehx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_y5e0m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_j4mcv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_dqveo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_i5u1m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_i5u1m")
+}],
+"loop": false,
+"name": &"Earthquake In City",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33_ad732")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_aivgu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_yqfqw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_0nl1j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_x5gmt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_baubm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_70nwi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_ethql")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_cdfvv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_7x133")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_7rj30")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_vpedg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_b0di6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_x4osh")
+}],
+"loop": false,
+"name": &"Economic Downturn",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4vawr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8mpt8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_38hax")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ywklq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_e6fl6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_e6fl6")
+}],
+"loop": false,
+"name": &"Start",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_foehx"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.24313726, 0.30980393, 0.4392157, 0.69803923)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.050980393, 0.06666667, 0.09019608, 0.7294118)
+corner_detail = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_liagk"]
+
+[sub_resource type="Animation" id="Animation_mni22"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_8gyg7"]
+resource_name = "next_bounce"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NextArrowIndicator:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 0.26666668, 0.56666666, 0.8666667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(367, 59), Vector2(367, 54), Vector2(367, 52), Vector2(367, 54), Vector2(367, 59)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1n3q7"]
+_data = {
+&"RESET": SubResource("Animation_mni22"),
+&"next_bounce": SubResource("Animation_8gyg7")
+}
+
+[node name="StartAnimation" type="Node2D"]
+script = ExtResource("1_3ifvo")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -643.0
+offset_top = -381.0
+offset_right = 683.0
+offset_bottom = 421.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(128, 64.00001)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_n1vd5")
+animation = &"Start"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(128, 64)
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = -64.0
+offset_top = 152.0
+offset_right = 320.0
+offset_bottom = 216.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_foehx")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 382.0
+offset_bottom = 62.0
+text = " "
+label_settings = SubResource("LabelSettings_liagk")
+autowrap_mode = 3
+
+[node name="NextArrowIndicator" type="Sprite2D" parent="Panel"]
+position = Vector2(367, 59)
+texture = ExtResource("35_mni22")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Panel"]
+libraries = {
+&"": SubResource("AnimationLibrary_1n3q7")
+}

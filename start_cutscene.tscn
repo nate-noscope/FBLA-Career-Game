@@ -1,0 +1,68 @@
+[gd_scene load_steps=7 format=3 uid="uid://0wn0dbpopb7e"]
+
+[ext_resource type="Script" uid="uid://csu4jmp7nt776" path="res://start_cutscene.gd" id="1_58vgw"]
+[ext_resource type="PackedScene" uid="uid://nascfngonjj4" path="res://FBLA-logo.ase" id="1_e8f5h"]
+[ext_resource type="Texture2D" uid="uid://cikfpryd5rl12" path="res://nate-portrait.ase" id="3_nfw16"]
+[ext_resource type="Texture2D" uid="uid://cwf0p1uphq1cp" path="res://leo-portrait.ase" id="4_xn2bi"]
+[ext_resource type="Texture2D" uid="uid://bq0jrjcprjktg" path="res://leo-name.ase" id="5_hd4fm"]
+[ext_resource type="Texture2D" uid="uid://e03hc1wu60xc" path="res://nate-name.ase" id="6_5w24v"]
+
+[node name="StartCutscene" type="Node2D"]
+script = ExtResource("1_58vgw")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -750.0
+offset_top = -750.0
+offset_right = 750.0
+offset_bottom = 750.0
+color = Color(0.07724313, 0.076838665, 0.39564782, 1)
+
+[node name="FBLA-logo" parent="." instance=ExtResource("1_e8f5h")]
+scale = Vector2(6, 6)
+
+[node name="Layer2" type="Node2D" parent="."]
+visible = false
+
+[node name="ColorRect2" type="ColorRect" parent="Layer2"]
+offset_left = -750.0
+offset_top = -750.0
+offset_right = 750.0
+offset_bottom = 750.0
+color = Color(0.15686275, 0.38431373, 0.99607843, 1)
+
+[node name="Node2D" type="Node2D" parent="Layer2"]
+modulate = Color(1, 1, 1, 0)
+
+[node name="NatePortrait" type="Sprite2D" parent="Layer2/Node2D"]
+position = Vector2(-275, -100)
+scale = Vector2(5, 5)
+texture = ExtResource("3_nfw16")
+
+[node name="LeoPortrait" type="Sprite2D" parent="Layer2/Node2D"]
+position = Vector2(-275, 100)
+scale = Vector2(5, 5)
+texture = ExtResource("4_xn2bi")
+
+[node name="LeoName" type="Sprite2D" parent="Layer2/Node2D"]
+position = Vector2(100, 100)
+scale = Vector2(5, 5)
+texture = ExtResource("5_hd4fm")
+
+[node name="NateName" type="Sprite2D" parent="Layer2/Node2D"]
+position = Vector2(100, -100)
+scale = Vector2(5, 5)
+texture = ExtResource("6_5w24v")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 3.5
+one_shot = true
+
+[connection signal="frame_changed" from="FBLA-logo" to="." method="_on_fbl_alogo_frame_changed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

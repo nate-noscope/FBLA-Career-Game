@@ -1,0 +1,20 @@
+~ start
+Judge: [color=red]Court[/color] is now [pulse freq=2]in session[/pulse]. We are here today to review the insurance claim dispute.
+Lawyer: [color=black]Your honor[/color], my client’s property underwent significant damage following a [wave]documented earthquake.[/wave]
+Prosecutor: Your honor, the defense disputes that claim.
+Judge: Plaintiff, present your [color=yellow]evidence[/color].
+Lawyer: Your Honor, we present photographic evidence of my client’s property before and after the seismic event.
+Judge: Admitted.
+Lawyer: [#table] These images show no visible damage prior to the earthquake, followed by severe, apparent damage afterwards.
+Prosecutor: Photographs alone do not establish causation. The damage could be completely unrelated.
+Judge: [#surprised] Proceed with additional evidence.
+Lawyer: [#table] Yes, Your Honor. We also present the insurance policy covering the client’s property.
+Judge: Admitted.
+Judge: This policy does include earthquake damage as a covered event.
+Prosecutor: [#surprised] Coverage alone is insufficient, Your Honor. It is still yet to be proven that the earthquake caused the damage.
+Judge: [#surprised] Agreed. Plaintiff?
+Lawyer: The timeline is clear. The property shows no prior damage, and the structural issues appear immediately after the seismic event.
+Judge: Understood.
+Judge: Based on the photographic evidence and confirmed policy coverage, the court finds the damage consistent with earthquake impact.
+Judge: The claim is valid. The insurance company is ordered to compensate.
+=> END

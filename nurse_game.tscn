@@ -1,0 +1,515 @@
+[gd_scene load_steps=42 format=3 uid="uid://cyltk2u7dl8km"]
+
+[ext_resource type="Script" uid="uid://dlw87q8xc0yd4" path="res://nurse_game.gd" id="1_1xxtd"]
+[ext_resource type="Texture2D" uid="uid://bpalmy7q4skhh" path="res://approval-faces/approval-faces2.png" id="2_dv4dk"]
+[ext_resource type="Texture2D" uid="uid://cskujduydmowo" path="res://nurse-game-background.ase" id="2_qn4x6"]
+[ext_resource type="Texture2D" uid="uid://di2qt470kb68k" path="res://patient-1-sprites/patient-6.png" id="3_2m3og"]
+[ext_resource type="Texture2D" uid="uid://41gac44fpnt3" path="res://pull-tab.png" id="3_b4hvl"]
+[ext_resource type="Texture2D" uid="uid://cut5rqbptbw77" path="res://patient-1-sprites/patient-7.png" id="4_ksik2"]
+[ext_resource type="BitMap" uid="uid://b0mre1vx5cb2n" path="res://pull-tab-bitmap.png" id="4_qn4x6"]
+[ext_resource type="Texture2D" uid="uid://ckqmx5r5gdr77" path="res://patient-1-sprites/patient-8.png" id="5_r6fgc"]
+[ext_resource type="Texture2D" uid="uid://77wl52q3465a" path="res://patient-1-sprites/patient-9.png" id="6_toisd"]
+[ext_resource type="Texture2D" uid="uid://bpomc71emwms4" path="res://plaster-roll-icon.png" id="6_wkxm1"]
+[ext_resource type="Texture2D" uid="uid://dlj0ptsood6w2" path="res://patient-1-sprites/patient-10.png" id="7_o1i83"]
+[ext_resource type="Texture2D" uid="uid://dyqkvonot23pw" path="res://prescription-icon.ase" id="7_vnef5"]
+[ext_resource type="Texture2D" uid="uid://cl4xvnqp5ska6" path="res://patient-1-sprites/patient-1.png" id="8_fh5w1"]
+[ext_resource type="Texture2D" uid="uid://cfna1ikilv0lr" path="res://iv-fluid.png" id="8_vnef5"]
+[ext_resource type="Texture2D" uid="uid://ck1pqttriosrm" path="res://patient-1-sprites/patient-2.png" id="9_8hgxi"]
+[ext_resource type="Texture2D" uid="uid://x6p3mdo8oia0" path="res://patient-1-sprites/patient-3.png" id="10_l6x5s"]
+[ext_resource type="Texture2D" uid="uid://cm5c64i54xmol" path="res://patient-1-sprites/patient-4.png" id="11_jtktu"]
+[ext_resource type="Texture2D" uid="uid://y3ogupvglwg0" path="res://patient-1-sprites/patient-5.png" id="12_emamg"]
+[ext_resource type="Texture2D" uid="uid://dko0x145l8p0x" path="res://arrow-button1.png" id="19_toisd"]
+[ext_resource type="Texture2D" uid="uid://cispvlwthglhs" path="res://arrow-button2.png" id="20_o1i83"]
+[ext_resource type="BitMap" uid="uid://drp8x545ua5kk" path="res://arrow-button-bitmap.png" id="21_fh5w1"]
+[ext_resource type="PackedScene" uid="uid://brevdfcw65mb" path="res://black_fade.tscn" id="22_o1i83"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qn4x6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_2m3og")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ksik2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_r6fgc")
+}, {
+"duration": 0.3,
+"texture": ExtResource("6_toisd")
+}, {
+"duration": 0.7,
+"texture": ExtResource("7_o1i83")
+}],
+"loop": true,
+"name": &"idle_cast",
+"speed": 2.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_fh5w1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_8hgxi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_l6x5s")
+}, {
+"duration": 0.3,
+"texture": ExtResource("11_jtktu")
+}, {
+"duration": 0.7,
+"texture": ExtResource("12_emamg")
+}],
+"loop": true,
+"name": &"idle_normal",
+"speed": 2.5
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ipdmw"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.101960786, 0.101960786, 0.101960786, 0)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="Animation" id="Animation_qn4x6"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mq57a"]
+_data = {
+&"RESET": SubResource("Animation_qn4x6")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m1rwy"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_detail = 1
+
+[sub_resource type="LabelSettings" id="LabelSettings_dv4dk"]
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_56b7f"]
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_m1rwy"]
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mq57a"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_detail = 1
+
+[sub_resource type="Animation" id="Animation_nqqgu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 61)]
+}
+
+[sub_resource type="Animation" id="Animation_vnef5"]
+resource_name = "slide_left"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-52, 61.000004), Vector2(-194, 61)]
+}
+
+[sub_resource type="Animation" id="Animation_wkxm1"]
+resource_name = "slide_right"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-194, 61), Vector2(-52, 61.000004)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sysfd"]
+_data = {
+&"RESET": SubResource("Animation_nqqgu"),
+&"slide_left": SubResource("Animation_vnef5"),
+&"slide_right": SubResource("Animation_wkxm1")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_qn4x6"]
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_o1i83"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_toisd"]
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_fh5w1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(69, -67)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_o1i83"]
+resource_name = "popup_fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(69, -67), Vector2(68, -91)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8hgxi"]
+_data = {
+&"RESET": SubResource("Animation_fh5w1"),
+&"popup_fade": SubResource("Animation_o1i83")
+}
+
+[node name="NurseGame" type="Node2D"]
+script = ExtResource("1_1xxtd")
+
+[node name="NurseGameBackground" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(128, 64)
+scale = Vector2(6, 6)
+texture = ExtResource("2_qn4x6")
+metadata/_edit_lock_ = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(128, 64)
+
+[node name="Patient" type="AnimatedSprite2D" parent="."]
+position = Vector2(154, 65)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_qn4x6")
+animation = &"idle_normal"
+autoplay = "idle_normal"
+frame_progress = 0.72211546
+
+[node name="Arm" type="Button" parent="Patient"]
+offset_left = 0.75
+offset_top = 0.25
+offset_right = 8.75
+offset_bottom = 16.75
+theme_override_styles/normal = SubResource("StyleBoxFlat_ipdmw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ipdmw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ipdmw")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_ipdmw")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_ipdmw")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ipdmw")
+
+[node name="LeftHand" type="Button" parent="Patient"]
+offset_left = -15.5
+offset_top = 11.5
+offset_right = -7.5
+offset_bottom = 19.5
+theme_override_styles/normal = SubResource("StyleBoxFlat_ipdmw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ipdmw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ipdmw")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_ipdmw")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_ipdmw")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ipdmw")
+
+[node name="Prescribe" type="Button" parent="Patient"]
+offset_left = -15.5
+offset_top = -24.25
+offset_right = 8.5
+offset_bottom = 17.25
+theme_override_styles/normal = SubResource("StyleBoxFlat_ipdmw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ipdmw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ipdmw")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_ipdmw")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_ipdmw")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ipdmw")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Patient"]
+libraries = {
+&"": SubResource("AnimationLibrary_mq57a")
+}
+
+[node name="Notes" type="Panel" parent="."]
+offset_left = 4.0
+offset_top = 133.0
+offset_right = 448.0
+offset_bottom = 244.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_m1rwy")
+
+[node name="Label" type="Label" parent="Notes"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -3.0
+offset_right = 41.0
+offset_bottom = 15.0
+text = "Notes"
+label_settings = SubResource("LabelSettings_dv4dk")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Notes"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 13.0
+offset_right = 443.0
+offset_bottom = 108.0
+
+[node name="NotesLabel" type="Label" parent="Notes/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Plaster Roll - Used to make casts for patients with damaged bones, keeping them from moving their arm or leg until it heals properly. To use it, click on the plaster icon and then click the patient's injured limb 3 times.
+Prescription - This gives a patient information about what medication they should take and when, helpful for patients with bacterial or viral diseases. Click on it and then click any part of the patient to use it.
+IV Fluid - Delivers water, electrolytes, and medicine to the bloodstream, skipping the digestive system to work quicker. It helps patients with blood loss, like in a crush injury. To use it, click on the fluid and then on the patient's right hand."
+label_settings = SubResource("LabelSettings_56b7f")
+autowrap_mode = 3
+
+[node name="PatientNumber" type="Panel" parent="."]
+offset_left = 306.0
+offset_top = -116.0
+offset_right = 448.0
+offset_bottom = -79.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_m1rwy")
+
+[node name="Label" type="Label" parent="PatientNumber"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 71.5
+offset_bottom = 19.0
+scale = Vector2(2, 2)
+text = "Patient #3"
+label_settings = SubResource("LabelSettings_m1rwy")
+
+[node name="Approval" type="Panel" parent="."]
+offset_left = 159.0
+offset_top = -116.0
+offset_right = 306.0
+offset_bottom = -79.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_m1rwy")
+
+[node name="Label" type="Label" parent="Approval"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 63.0
+offset_bottom = 26.0
+scale = Vector2(2, 2)
+text = "Approval:"
+label_settings = SubResource("LabelSettings_m1rwy")
+
+[node name="Sprite2D" type="Sprite2D" parent="Approval"]
+position = Vector2(127, 19)
+scale = Vector2(2, 2)
+texture = ExtResource("2_dv4dk")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_top = 61.0
+offset_right = 16.0
+offset_bottom = 77.0
+scale = Vector2(3, 3)
+texture_normal = ExtResource("3_b4hvl")
+texture_click_mask = ExtResource("4_qn4x6")
+
+[node name="ItemList" type="Panel" parent="TextureButton"]
+z_index = -1
+layout_mode = 0
+offset_left = -46.666664
+offset_top = -59.0
+offset_right = 1.0
+offset_bottom = 61.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_mq57a")
+
+[node name="PlasterRoll" type="TextureButton" parent="TextureButton/ItemList"]
+layout_mode = 0
+offset_left = 10.333336
+offset_top = 8.666667
+offset_right = 26.333336
+offset_bottom = 25.0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("6_wkxm1")
+
+[node name="Prescription" type="TextureButton" parent="TextureButton/ItemList"]
+layout_mode = 0
+offset_left = 9.000004
+offset_top = 47.000008
+offset_right = 25.000004
+offset_bottom = 63.000015
+scale = Vector2(2, 2)
+texture_normal = ExtResource("7_vnef5")
+
+[node name="IVFluid" type="TextureButton" parent="TextureButton/ItemList"]
+layout_mode = 0
+offset_left = 8.333334
+offset_top = 79.333336
+offset_right = 24.333334
+offset_bottom = 95.333336
+scale = Vector2(2, 2)
+texture_normal = ExtResource("8_vnef5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TextureButton"]
+libraries = {
+&"": SubResource("AnimationLibrary_sysfd")
+}
+
+[node name="Time" type="Panel" parent="."]
+offset_left = 113.0
+offset_top = -116.0
+offset_right = 159.0
+offset_bottom = -79.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_m1rwy")
+
+[node name="TimeLabel" type="Label" parent="Time"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 23.5
+offset_bottom = 19.0
+scale = Vector2(2, 2)
+text = "120"
+label_settings = SubResource("LabelSettings_qn4x6")
+
+[node name="TextureButton2" type="TextureButton" parent="."]
+offset_left = 361.0
+offset_top = 70.0
+offset_right = 377.0
+offset_bottom = 86.0
+scale = Vector2(4, 4)
+texture_normal = ExtResource("19_toisd")
+texture_pressed = ExtResource("20_o1i83")
+texture_click_mask = ExtResource("21_fh5w1")
+
+[node name="Label" type="Label" parent="TextureButton2"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 5.0
+offset_right = 50.0
+offset_bottom = 23.0
+scale = Vector2(0.25, 0.25)
+text = "I'm Done"
+label_settings = SubResource("LabelSettings_o1i83")
+
+[node name="Tool" type="Panel" parent="."]
+offset_left = 73.0
+offset_top = -116.0
+offset_right = 113.0
+offset_bottom = -79.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_m1rwy")
+
+[node name="Sprite2D" type="Sprite2D" parent="Tool"]
+position = Vector2(20, 18)
+scale = Vector2(2, 2)
+texture = ExtResource("6_wkxm1")
+
+[node name="ToolUsePopup" type="Label" parent="."]
+visible = false
+offset_left = 69.0
+offset_top = -67.0
+offset_right = 143.00005
+offset_bottom = -49.0
+scale = Vector2(2, 2)
+text = "Cast applied!"
+label_settings = SubResource("LabelSettings_toisd")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ToolUsePopup"]
+libraries = {
+&"": SubResource("AnimationLibrary_8hgxi")
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_left = -655.0
+offset_top = -312.0
+offset_right = 820.0
+offset_bottom = 444.0
+color = Color(0, 0, 0, 0.56078434)
+
+[node name="BlackFade" parent="." instance=ExtResource("22_o1i83")]
+visible = false
+offset_right = 735.0
+offset_bottom = 426.0
+
+[connection signal="pressed" from="Patient/Arm" to="." method="_on_arm_pressed"]
+[connection signal="pressed" from="Patient/LeftHand" to="." method="_on_left_hand_pressed"]
+[connection signal="pressed" from="Patient/Prescribe" to="." method="_on_prescribe_pressed"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="TextureButton/ItemList/PlasterRoll" to="." method="_on_plaster_roll_pressed"]
+[connection signal="pressed" from="TextureButton/ItemList/Prescription" to="." method="_on_prescription_pressed"]
+[connection signal="pressed" from="TextureButton/ItemList/IVFluid" to="." method="_on_iv_fluid_pressed"]
+[connection signal="pressed" from="TextureButton2" to="." method="_on_texture_button_2_pressed"]

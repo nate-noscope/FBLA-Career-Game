@@ -1,0 +1,441 @@
+[gd_scene load_steps=29 format=3 uid="uid://cr4p3slfr7doj"]
+
+[ext_resource type="Script" uid="uid://cd2f2r5kg201f" path="res://stocks_game.gd" id="1_iy6p4"]
+[ext_resource type="Texture2D" uid="uid://df0wux83clxmy" path="res://newspaper.png" id="1_qfklv"]
+[ext_resource type="Texture2D" uid="uid://4m60esbjbhca" path="res://wood-plank.ase" id="2_b3cog"]
+[ext_resource type="Script" uid="uid://b3ie1terrd1r5" path="res://stock_tracker_1.gd" id="4_ftd38"]
+[ext_resource type="Script" uid="uid://c7iohu32b5rek" path="res://stock_tracker_2.gd" id="5_pve3l"]
+[ext_resource type="Script" uid="uid://bmsvjwhh87a4u" path="res://stock_tracker_3.gd" id="6_pve3l"]
+[ext_resource type="Texture2D" uid="uid://b0d0tq0dx5dfm" path="res://buy-button.ase1.png" id="7_2bo0r"]
+[ext_resource type="Texture2D" uid="uid://vh43q04sb7cm" path="res://buy-button.ase2.png" id="9_k2ncs"]
+[ext_resource type="BitMap" uid="uid://bkdgfy5kw71po" path="res://buy-button-bitmap.png" id="10_3werb"]
+[ext_resource type="Texture2D" uid="uid://cwfskgaa5bhh7" path="res://sell-button.ase1.png" id="10_k2ncs"]
+[ext_resource type="Texture2D" uid="uid://bvjwf4fmmte54" path="res://sell-button.ase2.png" id="11_1kpmc"]
+[ext_resource type="Texture2D" uid="uid://uvt8ortutqmp" path="res://message-icon.ase" id="12_4ygpq"]
+[ext_resource type="Texture2D" uid="uid://qqvnu8w2spyv" path="res://client-text-box.ase" id="13_infdr"]
+[ext_resource type="FontFile" uid="uid://b63fi4tpf85td" path="res://Born2bSportyV2.ttf" id="14_ky0w0"]
+[ext_resource type="Texture2D" uid="uid://cm5hmrc7r85v1" path="res://hexa-deck-logo.ase" id="15_b5h66"]
+[ext_resource type="Texture2D" uid="uid://d37scunlodld6" path="res://bone-apetit-logo.ase" id="15_ky0w0"]
+[ext_resource type="Texture2D" uid="uid://cctgii86rww1f" path="res://8-ball-logo.ase" id="16_b5h66"]
+[ext_resource type="Texture2D" uid="uid://b5332lmcj3x48" path="res://laurel-balance.ase" id="18_ymqi6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w5rcs"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(2.887845e-06, 0.5158382, 0.36353835, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_detail = 1
+
+[sub_resource type="LabelSettings" id="LabelSettings_tew1k"]
+font = ExtResource("14_ky0w0")
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_ohhyh"]
+font = ExtResource("14_ky0w0")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ymqi6"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0.73333335, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_detail = 1
+
+[sub_resource type="LabelSettings" id="LabelSettings_b5h66"]
+font = ExtResource("14_ky0w0")
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tew1k"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0, 0.5647059, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b5h66"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_detail = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_w5rcs"]
+font = ExtResource("14_ky0w0")
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4xc3a"]
+line_spacing = -6.0
+font = ExtResource("14_ky0w0")
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ymqi6"]
+font = ExtResource("14_ky0w0")
+
+[node name="StocksGame" type="Node2D"]
+script = ExtResource("1_iy6p4")
+
+[node name="BalanceArea" type="Panel" parent="."]
+offset_left = -192.0
+offset_top = -108.0
+offset_right = -77.0
+offset_bottom = -79.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_w5rcs")
+
+[node name="LaurelBalance" type="Sprite2D" parent="BalanceArea"]
+position = Vector2(58, 15)
+texture = ExtResource("18_ymqi6")
+
+[node name="BalanceLabel" type="Label" parent="BalanceArea"]
+layout_mode = 0
+offset_left = 35.99997
+offset_top = 1.0
+offset_right = 125.99997
+offset_bottom = 33.0
+scale = Vector2(0.8, 0.8)
+text = "$200.00"
+label_settings = SubResource("LabelSettings_tew1k")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="LiquidAssetsLabel" type="Label" parent="BalanceArea"]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 21.0
+offset_right = 135.0
+offset_bottom = 44.0
+scale = Vector2(0.5, 0.5)
+text = "($200.00)"
+label_settings = SubResource("LabelSettings_ohhyh")
+
+[node name="MessageArea" type="Panel" parent="."]
+offset_left = -192.0
+offset_top = -79.0
+offset_right = -77.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ymqi6")
+
+[node name="ClientTextBox" type="Sprite2D" parent="MessageArea"]
+position = Vector2(52, 29.000004)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("13_infdr")
+
+[node name="MarginContainer" type="MarginContainer" parent="MessageArea/ClientTextBox"]
+anchors_preset = -1
+anchor_left = 0.040000003
+anchor_top = 0.32900003
+anchor_right = 0.961
+anchor_bottom = 0.671
+offset_left = -63.870014
+offset_top = -32.306
+offset_right = 53.241997
+offset_bottom = -11.694021
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+
+[node name="Label" type="Label" parent="MessageArea/ClientTextBox/MarginContainer"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_b5h66")
+autowrap_mode = 2
+
+[node name="MessageIcon" type="Sprite2D" parent="MessageArea"]
+position = Vector2(14, 10)
+texture = ExtResource("12_4ygpq")
+
+[node name="NewsArea" type="Panel" parent="."]
+offset_left = -192.0
+offset_right = -77.0
+offset_bottom = 108.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_tew1k")
+
+[node name="Newspaper" type="Sprite2D" parent="NewsArea"]
+position = Vector2(16, 16)
+texture = ExtResource("1_qfklv")
+
+[node name="Panel" type="Panel" parent="NewsArea"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = -1.0
+offset_right = 115.0
+offset_bottom = 32.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_b5h66")
+
+[node name="Headline" type="Label" parent="NewsArea/Panel"]
+layout_mode = 0
+offset_left = -29.0
+offset_top = 35.0
+offset_right = 193.0
+offset_bottom = 179.0
+scale = Vector2(0.5, 0.5)
+label_settings = SubResource("LabelSettings_w5rcs")
+autowrap_mode = 2
+
+[node name="Label" type="Label" parent="NewsArea/Panel"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 90.0
+offset_bottom = 38.0
+text = "NEWS FROM 
+WALL STREET"
+label_settings = SubResource("LabelSettings_4xc3a")
+
+[node name="Panel2" type="Panel" parent="NewsArea"]
+layout_mode = 0
+offset_top = 32.0
+offset_right = 115.0
+offset_bottom = 108.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_b5h66")
+
+[node name="Headline" type="Label" parent="NewsArea/Panel2"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 224.0
+offset_bottom = 44.0
+scale = Vector2(0.5, 0.5)
+text = "No news yet."
+label_settings = SubResource("LabelSettings_w5rcs")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="NewsTimer" type="Timer" parent="NewsArea"]
+wait_time = 5.0
+autostart = true
+
+[node name="StocksArea" type="TextureRect" parent="."]
+offset_left = -77.0
+offset_top = -107.99999
+offset_right = 179.0
+offset_bottom = 97.7143
+scale = Vector2(1.05, 1.05)
+texture = ExtResource("2_b3cog")
+stretch_mode = 1
+
+[node name="StockBg1" type="ColorRect" parent="StocksArea"]
+layout_mode = 0
+offset_left = 93.333374
+offset_top = 12.380943
+offset_right = 253.33337
+offset_bottom = 62.380943
+
+[node name="StockTracker1" type="ColorRect" parent="StocksArea/StockBg1"]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 40.0
+offset_right = 152.0
+offset_bottom = 42.0
+color = Color(0, 1, 0, 1)
+script = ExtResource("4_ftd38")
+fair_value = 30.0
+
+[node name="ChildHolder" type="Node" parent="StocksArea/StockBg1/StockTracker1"]
+
+[node name="EightBallBuy" type="TextureButton" parent="StocksArea/StockBg1"]
+layout_mode = 0
+offset_left = -101.90479
+offset_top = -13.333336
+offset_right = -37.904793
+offset_bottom = 50.666664
+texture_normal = ExtResource("7_2bo0r")
+texture_pressed = ExtResource("9_k2ncs")
+texture_click_mask = ExtResource("10_3werb")
+
+[node name="EightBallSell" type="TextureButton" parent="StocksArea/StockBg1"]
+layout_mode = 0
+offset_left = -101.90477
+offset_top = 15.238089
+offset_right = -37.90477
+offset_bottom = 79.23809
+texture_normal = ExtResource("10_k2ncs")
+texture_pressed = ExtResource("11_1kpmc")
+texture_click_mask = ExtResource("10_3werb")
+
+[node name="8BallLogo" type="Sprite2D" parent="StocksArea/StockBg1"]
+position = Vector2(-20.571438, 16.809525)
+texture = ExtResource("16_b5h66")
+
+[node name="8BallPriceLabel" type="Label" parent="StocksArea/StockBg1"]
+layout_mode = 0
+offset_left = -42.85715
+offset_top = 35.238094
+offset_right = -2.857151
+offset_bottom = 58.238094
+scale = Vector2(0.8, 0.8)
+text = "$"
+label_settings = SubResource("LabelSettings_ymqi6")
+
+[node name="8BallSharesLabel" type="Label" parent="StocksArea/StockBg1"]
+layout_mode = 0
+offset_left = -91.4286
+offset_top = 27.619045
+offset_right = -37.428596
+offset_bottom = 50.619045
+scale = Vector2(0.8, 0.8)
+text = "0 Shares"
+label_settings = SubResource("LabelSettings_ymqi6")
+
+[node name="StockBg2" type="ColorRect" parent="StocksArea"]
+layout_mode = 0
+offset_left = 93.333336
+offset_top = 79.04762
+offset_right = 253.33334
+offset_bottom = 129.04762
+
+[node name="StockTracker2" type="ColorRect" parent="StocksArea/StockBg2"]
+layout_mode = 0
+offset_left = 149.52382
+offset_top = 40.0
+offset_right = 151.52382
+offset_bottom = 42.0
+color = Color(0, 1, 0, 1)
+script = ExtResource("5_pve3l")
+price = 65.0
+fair_value = 65.0
+
+[node name="ChildHolder" type="Node" parent="StocksArea/StockBg2/StockTracker2"]
+
+[node name="HexaDeckBuy" type="TextureButton" parent="StocksArea/StockBg2"]
+layout_mode = 0
+offset_left = -101.904785
+offset_top = -13.3333435
+offset_right = -37.904785
+offset_bottom = 50.666656
+texture_normal = ExtResource("7_2bo0r")
+texture_pressed = ExtResource("9_k2ncs")
+texture_click_mask = ExtResource("10_3werb")
+
+[node name="HexaDeckSell" type="TextureButton" parent="StocksArea/StockBg2"]
+layout_mode = 0
+offset_left = -101.90477
+offset_top = 15.238089
+offset_right = -37.90477
+offset_bottom = 79.23809
+texture_normal = ExtResource("10_k2ncs")
+texture_pressed = ExtResource("11_1kpmc")
+texture_click_mask = ExtResource("10_3werb")
+
+[node name="HexaDeckPriceLabel" type="Label" parent="StocksArea/StockBg2"]
+layout_mode = 0
+offset_left = -42.85715
+offset_top = 35.238094
+offset_right = -2.857151
+offset_bottom = 58.238094
+scale = Vector2(0.8, 0.8)
+text = "$"
+label_settings = SubResource("LabelSettings_ymqi6")
+
+[node name="HexaDeckSharesLabel" type="Label" parent="StocksArea/StockBg2"]
+layout_mode = 0
+offset_left = -91.4286
+offset_top = 27.619045
+offset_right = -37.428596
+offset_bottom = 50.61904
+scale = Vector2(0.8, 0.8)
+text = "0 Shares"
+label_settings = SubResource("LabelSettings_ymqi6")
+
+[node name="StockBg3" type="ColorRect" parent="StocksArea"]
+layout_mode = 0
+offset_left = 93.33334
+offset_top = 140.9524
+offset_right = 253.33334
+offset_bottom = 190.9524
+
+[node name="StockTracker3" type="ColorRect" parent="StocksArea/StockBg3"]
+layout_mode = 0
+offset_left = 149.52385
+offset_top = 40.0
+offset_right = 151.52385
+offset_bottom = 42.0
+color = Color(0, 1, 0, 1)
+script = ExtResource("6_pve3l")
+fair_value = 20.0
+
+[node name="ChildHolder" type="Node" parent="StocksArea/StockBg3/StockTracker3"]
+
+[node name="BoneApetitBuy" type="TextureButton" parent="StocksArea/StockBg3"]
+layout_mode = 0
+offset_left = -101.904785
+offset_top = -13.3333435
+offset_right = -37.904785
+offset_bottom = 50.666656
+texture_normal = ExtResource("7_2bo0r")
+texture_pressed = ExtResource("9_k2ncs")
+texture_click_mask = ExtResource("10_3werb")
+
+[node name="BoneApetitSell" type="TextureButton" parent="StocksArea/StockBg3"]
+layout_mode = 0
+offset_left = -101.90477
+offset_top = 15.238089
+offset_right = -37.90477
+offset_bottom = 79.23809
+texture_normal = ExtResource("10_k2ncs")
+texture_pressed = ExtResource("11_1kpmc")
+texture_click_mask = ExtResource("10_3werb")
+
+[node name="BoneApetitLogo" type="Sprite2D" parent="StocksArea/StockBg3"]
+position = Vector2(-26.047617, 30.761902)
+texture = ExtResource("15_ky0w0")
+
+[node name="HexaDeckLogo" type="Sprite2D" parent="StocksArea/StockBg3"]
+position = Vector2(-26.666677, -36.190487)
+texture = ExtResource("15_b5h66")
+
+[node name="BoneApetitPriceLabel" type="Label" parent="StocksArea/StockBg3"]
+layout_mode = 0
+offset_left = -42.85715
+offset_top = 35.238094
+offset_right = -2.857151
+offset_bottom = 58.238094
+scale = Vector2(0.8, 0.8)
+text = "$"
+label_settings = SubResource("LabelSettings_ymqi6")
+
+[node name="BoneApetitSharesLabel" type="Label" parent="StocksArea/StockBg3"]
+layout_mode = 0
+offset_left = -91.4286
+offset_top = 27.619045
+offset_right = -37.428596
+offset_bottom = 50.61904
+scale = Vector2(0.8, 0.8)
+text = "0 Shares"
+label_settings = SubResource("LabelSettings_ymqi6")
+
+[node name="Timer" type="Timer" parent="StocksArea"]
+wait_time = 0.1
+autostart = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(5, 5)
+
+[connection signal="timeout" from="NewsArea/NewsTimer" to="." method="_on_news_timer_timeout"]
+[connection signal="pressed" from="StocksArea/StockBg1/EightBallBuy" to="." method="_on_eight_ball_buy_pressed"]
+[connection signal="pressed" from="StocksArea/StockBg1/EightBallSell" to="." method="_on_eight_ball_sell_pressed"]
+[connection signal="pressed" from="StocksArea/StockBg2/HexaDeckBuy" to="." method="_on_hexa_deck_buy_pressed"]
+[connection signal="pressed" from="StocksArea/StockBg2/HexaDeckSell" to="." method="_on_hexa_deck_sell_pressed"]
+[connection signal="pressed" from="StocksArea/StockBg3/BoneApetitBuy" to="." method="_on_bone_apetit_buy_pressed"]
+[connection signal="pressed" from="StocksArea/StockBg3/BoneApetitSell" to="." method="_on_bone_apetit_sell_pressed"]
+[connection signal="timeout" from="StocksArea/Timer" to="." method="_on_timer_timeout"]
