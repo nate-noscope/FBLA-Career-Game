@@ -1,20 +1,63 @@
 ~ start
-Judge: [color=red]Court[/color] is now [pulse freq=2]in session[/pulse]. We are here today to review the insurance claim dispute.
-Lawyer: [color=black]Your honor[/color], my client’s property underwent significant damage following a [wave]documented earthquake.[/wave]
-Prosecutor: Your honor, the defense disputes that claim.
+Judge: Court is now [pulse freq=2]in session[/pulse]. We are here today to review the insurance claim dispute.
+Lawyer: Your Honor, my client’s property underwent significant damage following a documented earthquake.
+Prosecutor: Your Honor, the defense disputes that claim.
 Judge: Plaintiff, present your [color=yellow]evidence[/color].
-Lawyer: Your Honor, we present photographic evidence of my client’s property before and after the seismic event.
-Judge: Admitted.
-Lawyer: [#table] These images show no visible damage prior to the earthquake, followed by severe, apparent damage afterwards.
-Prosecutor: Photographs alone do not establish causation. The damage could be completely unrelated.
-Judge: [#surprised] Proceed with additional evidence.
-Lawyer: [#table] Yes, Your Honor. We also present the insurance policy covering the client’s property.
-Judge: Admitted.
-Judge: This policy does include earthquake damage as a covered event.
-Prosecutor: [#surprised] Coverage alone is insufficient, Your Honor. It is still yet to be proven that the earthquake caused the damage.
-Judge: [#surprised] Agreed. Plaintiff?
-Lawyer: The timeline is clear. The property shows no prior damage, and the structural issues appear immediately after the seismic event.
-Judge: Understood.
-Judge: Based on the photographic evidence and confirmed policy coverage, the court finds the damage consistent with earthquake impact.
+if Globals.evidence1 == 1:
+	Lawyer: Your Honor, we present photographic evidence of my client’s property before and after the seismic event.
+	Judge: Admitted.
+	Lawyer: [#table] These images show no visible damage prior to the earthquake, followed by severe, apparent damage afterwards.
+	Prosecutor: Photographs alone do not establish causation. The damage could be completely unrelated.
+	- Use an idiom to hit the point home
+		Lawyer: A picture is worth a thousand words, and 2 are worth twice that.
+	- Mention the time of the photographs to defend the evidence
+		Lawyer: The first photo was taken less than a week before the earthquake, while the second was taken less than a day after.
+		Lawyer: [#pointing] Such a short period of time shows clear causation because there would be nearly no space for any other damage to occur.
+		$> Globals.court_score += 1
+else:
+	Lawyer: Your Honor, we present a written affidavit of my client's neighbor's experience during the earthquake.
+	Judge: Admitted.
+	Lawyer: [#table] The neighbor reports hearing loud crashing in the direction of my client's house during the earthquake.
+	Prosecutor: [#surprised] Such sounds could be a result of a completely different structure collapsing. The damage could be completely unrelated.
+	- Defend the evidence with the description by the neighbor
+		Lawyer: The neighbor described the crashing as loud, so it couldn't have come from another structure as it would be too far away.
+		$> Globals.court_score += 1
+	- Defend the evidence with the house's position
+		Lawyer: My client's house is placed far enough from other houses that a loud crash could not have come from another building.
+		$> Globals.court_score += 1
+	- Defend the evidence with the neighbor's superb hearing
+		Lawyer: The neighbor has perfect hearing in both ears, so they could not have misheard the collapse.
+Judge: Proceed with additional evidence.
+if Globals.evidence2 == 3:
+	Lawyer: [#table] Yes, Your Honor. We also present a repair estimate of the client's house from a contractor.
+	Judge: Admitted.
+	Lawyer: The estimate shows that the house was severely damaged in the accident.
+	Judge: The previous evidence combined with the report show clear damage. But you are still yet to prove the insurance should cover such damage.
+	- Mention a part of the insurance policy
+		Lawyer: We also present the insurance policy covering the client’s property.
+		Judge: Admitted.
+		Judge: This policy does include earthquake damage as a covered event.
+		$> Globals.court_score += 1
+	- Mention previous evidence to tie argument together
+		if Globals.evidence1 == 1:
+			Lawyer: The photographs mentioned earlier combined with the estimate show a clear timeline of more than sufficient damage.
+			Judge: Understood. Though the policy of the insurance company was not provided, the damage caused is clear.
+		else:
+			Lawyer: The testimony mentioned earlier combined with the estimate show a clear timeline of more than sufficient damage.
+			Judge: Understood. Though the policy of the insurance company was not provided, the damage caused is clear.
+else:
+	Lawyer: [#table] Yes, Your Honor. We also present the insurance policy covering the client’s property.
+	Judge: Admitted.
+	Judge: This policy does include earthquake damage as a covered event.
+	Prosecutor: [#surprised] Coverage alone is insufficient, Your Honor. It is still yet to be proven that the earthquake caused the damage.
+	Judge: [#surprised] Agreed. Plaintiff?
+	- Use a pun to emphasize your point
+		Lawyer: With evidence pulled directly from the insurance company's policy, there's no [shake]shaking[/shake] this argument.
+		Judge: [speed=0.5]. . .[/speed] Alright.
+	- Explain the timeline of the damage
+		Lawyer: The timeline is clear. The property shows no prior damage, and the structural issues appear immediately after the seismic event.
+		Judge: Understood.
+		$> Globals.court_score += 1
+Judge: Based on the evidence provided, the court finds the damage consistent with earthquake impact.
 Judge: The claim is valid. The insurance company is ordered to compensate.
 => END

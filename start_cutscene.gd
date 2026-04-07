@@ -24,4 +24,6 @@ func _process(delta: float) -> void:
 
 
 func _on_timer_2_timeout() -> void:
-	get_tree().change_scene_to_file("res://start_screen.tscn")
+	$BlackFade/AnimationPlayer.play("fade_to_black")
+	await $BlackFade/AnimationPlayer.animation_finished
+	get_tree().change_scene_to_file("res://menu_screen.tscn")

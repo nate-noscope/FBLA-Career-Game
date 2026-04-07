@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dpmyjmo5vc46t"]
+[gd_scene load_steps=52 format=3 uid="uid://dpmyjmo5vc46t"]
 
 [ext_resource type="Texture2D" uid="uid://bekw6dv8mgopv" path="res://lawyer-background.ase" id="1_7i1sj"]
 [ext_resource type="Script" uid="uid://pfo7thg543a2" path="res://lawyer_game.gd" id="1_xhr7q"]
@@ -19,6 +19,22 @@
 [ext_resource type="Texture2D" uid="uid://djca61a5y0iqv" path="res://prosecutor sprites/prosecutor-sprites2.png" id="13_2kdjh"]
 [ext_resource type="Texture2D" uid="uid://cocfdp653hfwc" path="res://prosecutor sprites/prosecutor-sprites3.png" id="18_2kdjh"]
 [ext_resource type="Texture2D" uid="uid://dbdoqwk0myos6" path="res://prosecutor sprites/prosecutor-sprites4.png" id="19_brbpe"]
+[ext_resource type="PackedScene" uid="uid://brevdfcw65mb" path="res://black_fade.tscn" id="20_brbpe"]
+[ext_resource type="Texture2D" uid="uid://dko0x145l8p0x" path="res://arrow-button1.png" id="20_qkfkc"]
+[ext_resource type="Texture2D" uid="uid://cispvlwthglhs" path="res://arrow-button2.png" id="21_u7slb"]
+[ext_resource type="BitMap" uid="uid://drp8x545ua5kk" path="res://arrow-button-bitmap.png" id="22_yjbca"]
+[ext_resource type="Texture2D" uid="uid://cqh5ik7o7d4qa" path="res://clipboard.png" id="23_52fv5"]
+[ext_resource type="Texture2D" uid="uid://pjnjb34g0t5h" path="res://checkbox-frames/checkbox1.png" id="24_qhlhn"]
+[ext_resource type="Texture2D" uid="uid://b4reys2iweel6" path="res://checkbox-frames/checkbox8.png" id="25_gyklv"]
+[ext_resource type="Texture2D" uid="uid://dqu2jbu4jcjnx" path="res://checkbox-frames/checkbox9.png" id="26_npad7"]
+[ext_resource type="Texture2D" uid="uid://c242bbfrxk6xu" path="res://checkbox-frames/checkbox10.png" id="27_tf4kb"]
+[ext_resource type="Texture2D" uid="uid://cxewltjejqrp8" path="res://checkbox-frames/checkbox2.png" id="28_pe4bs"]
+[ext_resource type="Texture2D" uid="uid://bfimeq0uum8l3" path="res://checkbox-frames/checkbox3.png" id="29_eq5yh"]
+[ext_resource type="Texture2D" uid="uid://ctylytnxqv21r" path="res://checkbox-frames/checkbox4.png" id="30_orlkd"]
+[ext_resource type="Texture2D" uid="uid://ve1yvuvpi414" path="res://checkbox-frames/checkbox5.png" id="31_f4atf"]
+[ext_resource type="Texture2D" uid="uid://da2mdjnpc3xfs" path="res://checkbox-frames/checkbox6.png" id="32_chmep"]
+[ext_resource type="Texture2D" uid="uid://b4da8vyilr30t" path="res://checkbox-frames/checkbox7.png" id="33_84fw8"]
+[ext_resource type="FontFile" uid="uid://tixah76i23q8" path="res://fs-pixel-sans-unicode-regular.ttf" id="34_7wl7e"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_82ox8"]
 animations = [{
@@ -63,7 +79,10 @@ animations = [{
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_brbpe"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_fmfyv")
+}],
 "loop": true,
 "name": &"default",
 "speed": 5.0
@@ -124,12 +143,12 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uklpq"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_brbpe"]
 content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
 content_margin_bottom = 4.0
-bg_color = Color(1, 1, 1, 1)
+bg_color = Color(0.89, 0.89, 0.89, 1)
 border_width_left = 3
 border_width_top = 3
 border_width_right = 3
@@ -140,18 +159,143 @@ corner_detail = 1
 [sub_resource type="LabelSettings" id="LabelSettings_siyox"]
 font_color = Color(0, 0, 0, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_uklpq"]
+[sub_resource type="ButtonGroup" id="ButtonGroup_52fv5"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_brbpe"]
+content_margin_left = 4.0
+content_margin_top = 0.0
+content_margin_right = 4.0
+content_margin_bottom = 0.0
+color = Color(0.35, 0.35, 0.35, 1)
+grow_begin = -15.0
+grow_end = -15.0
+thickness = 3
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_qhlhn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_um3rq"]
+
+[sub_resource type="Animation" id="Animation_gjupq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -600)]
+}
+
+[sub_resource type="Animation" id="Animation_t2yty"]
+resource_name = "review"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.7666667, 2.8666666, 3.5, 4.8333335, 5.366667, 6.4, 7.1, 7.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -600), Vector2(0, 89), Vector2(0, 89), Vector2(0, 47), Vector2(0, 47), Vector2(0, 29.005768), Vector2(0, 29.005768), Vector2(0, -8), Vector2(0, -8)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2.0666666, 3.9666667),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"check1"
+}, {
+"args": [],
+"method": &"check2"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cmnah"]
+_data = {
+&"RESET": SubResource("Animation_gjupq"),
+&"review": SubResource("Animation_t2yty")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_xuwgo"]
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ddw5n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_qhlhn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_gyklv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_npad7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_tf4kb")
+}],
+"loop": false,
+"name": &"check",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_qhlhn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_pe4bs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_eq5yh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_orlkd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_f4atf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_chmep")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_84fw8")
+}],
+"loop": false,
+"name": &"cross",
+"speed": 15.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ghgqy"]
+font = ExtResource("34_7wl7e")
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_woves"]
+font = ExtResource("34_7wl7e")
 font_color = Color(0, 0, 0, 1)
 
 [node name="LawyerGame" type="Node2D"]
 script = ExtResource("1_xhr7q")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(320, 180)
+position = Vector2(320, 162)
 
 [node name="Courtroom" type="Node2D" parent="."]
 
 [node name="LawyerLayer" type="CanvasLayer" parent="Courtroom"]
+visible = false
 
 [node name="LawyerBackground" type="Sprite2D" parent="Courtroom/LawyerLayer"]
 position = Vector2(320, 241)
@@ -170,24 +314,25 @@ scale = Vector2(2, 2)
 texture = ExtResource("4_ajcd6")
 
 [node name="JudgeLayer" type="CanvasLayer" parent="Courtroom"]
+visible = false
 
 [node name="JudgeBackground" type="Sprite2D" parent="Courtroom/JudgeLayer"]
-position = Vector2(320, 241)
+position = Vector2(290, 241)
 scale = Vector2(2, 2)
 texture = ExtResource("5_3an4y")
 
 [node name="Judge" type="AnimatedSprite2D" parent="Courtroom/JudgeLayer"]
-position = Vector2(320, -51)
+position = Vector2(290, -51)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_brbpe")
-animation = &"surprised_talk"
 
 [node name="JudgeForeground" type="Sprite2D" parent="Courtroom/JudgeLayer"]
-position = Vector2(320, 120)
+position = Vector2(290, 120)
 scale = Vector2(2, 2)
 texture = ExtResource("6_t0rr0")
 
 [node name="ProsecutorLayer" type="CanvasLayer" parent="Courtroom"]
+visible = false
 
 [node name="ProsecutorBackground" type="Sprite2D" parent="Courtroom/ProsecutorLayer"]
 position = Vector2(320, 241)
@@ -205,13 +350,12 @@ position = Vector2(320, 120)
 scale = Vector2(-2, 2)
 texture = ExtResource("4_ajcd6")
 
-[node name="EvidencePicking" type="Node2D" parent="."]
-visible = false
+[node name="EvidencePicking" type="CanvasLayer" parent="."]
 
 [node name="Panel" type="Panel" parent="EvidencePicking"]
-offset_right = 640.0
-offset_bottom = 360.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_uklpq")
+offset_right = 576.0
+offset_bottom = 324.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_brbpe")
 
 [node name="Label" type="Label" parent="EvidencePicking/Panel"]
 layout_mode = 0
@@ -226,32 +370,139 @@ label_settings = SubResource("LabelSettings_siyox")
 layout_mode = 0
 offset_left = 4.0
 offset_top = 40.0
-offset_right = 636.0
-offset_bottom = 357.0
+offset_right = 573.0
+offset_bottom = 282.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="EvidencePicking/Panel/ScrollContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="CheckBox" type="CheckBox" parent="EvidencePicking/Panel/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+button_group = SubResource("ButtonGroup_52fv5")
 text = "A picture of the client's house before/after the disaster"
 
 [node name="CheckBox2" type="CheckBox" parent="EvidencePicking/Panel/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+button_group = SubResource("ButtonGroup_52fv5")
 text = "A testimony from the client's neighbor"
+
+[node name="HSeparator" type="HSeparator" parent="EvidencePicking/Panel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_brbpe")
 
 [node name="CheckBox3" type="CheckBox" parent="EvidencePicking/Panel/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "An analysis from an engineer"
+button_group = SubResource("ButtonGroup_qhlhn")
+text = "A repair estimate from a contractor"
 
-[node name="Label2" type="Label" parent="EvidencePicking/Panel"]
+[node name="CheckBox4" type="CheckBox" parent="EvidencePicking/Panel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+button_group = SubResource("ButtonGroup_qhlhn")
+text = "A quote from the insurance company's policy"
+
+[node name="TextureButton2" type="TextureButton" parent="EvidencePicking/Panel"]
+self_modulate = Color(0.92629945, 2.5027991e-06, 1.540184e-06, 1)
 layout_mode = 0
-offset_left = 4.0
-offset_top = 339.0
-offset_right = 636.0
-offset_bottom = 357.0
-text = "Choose 1 piece of evidence to prove the insurance applies, and 1 to prove the damage is from the earthquake."
-label_settings = SubResource("LabelSettings_uklpq")
+offset_left = 244.0
+offset_top = 255.0
+offset_right = 260.0
+offset_bottom = 271.0
+scale = Vector2(4, 4)
+texture_normal = ExtResource("20_qkfkc")
+texture_pressed = ExtResource("21_u7slb")
+texture_click_mask = ExtResource("22_yjbca")
+
+[node name="Label" type="Label" parent="EvidencePicking/Panel/TextureButton2"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 5.0
+offset_right = 50.0
+offset_bottom = 23.0
+scale = Vector2(0.25, 0.25)
+text = "Let's Go"
+label_settings = SubResource("LabelSettings_um3rq")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Node2D" type="Node2D" parent="CanvasLayer"]
+position = Vector2(290, 217)
+
+[node name="Clipboard" type="Sprite2D" parent="CanvasLayer/Node2D"]
+z_index = 1
+position = Vector2(0, -600)
+scale = Vector2(6, 6)
+texture = ExtResource("23_52fv5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Node2D/Clipboard"]
+libraries = {
+&"": SubResource("AnimationLibrary_cmnah")
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/Node2D/Clipboard"]
+offset_left = -29.666668
+offset_top = -38.666664
+offset_right = 88.33333
+offset_bottom = -20.666664
+scale = Vector2(0.5, 0.5)
+text = "Performance Review"
+label_settings = SubResource("LabelSettings_xuwgo")
+horizontal_alignment = 1
+
+[node name="Checkbox" type="AnimatedSprite2D" parent="CanvasLayer/Node2D/Clipboard"]
+position = Vector2(-31.000008, -26.666672)
+scale = Vector2(0.33333334, 0.33333334)
+sprite_frames = SubResource("SpriteFrames_ddw5n")
+animation = &"check"
+
+[node name="Label" type="Label" parent="CanvasLayer/Node2D/Clipboard/Checkbox"]
+offset_left = 10.0
+offset_top = -9.0
+offset_right = 143.0
+offset_bottom = 9.0
+text = "Picked the best suited evidence"
+label_settings = SubResource("LabelSettings_ghgqy")
+
+[node name="Checkbox2" type="AnimatedSprite2D" parent="CanvasLayer/Node2D/Clipboard"]
+position = Vector2(-31.000008, -17.333328)
+scale = Vector2(0.33333334, 0.33333334)
+sprite_frames = SubResource("SpriteFrames_ddw5n")
+animation = &"check"
+
+[node name="Label" type="Label" parent="CanvasLayer/Node2D/Clipboard/Checkbox2"]
+offset_left = 10.0
+offset_top = -9.0
+offset_right = 143.0
+offset_bottom = 9.0
+text = "Defended in court well with etiquette"
+label_settings = SubResource("LabelSettings_ghgqy")
+
+[node name="Label2" type="Label" parent="CanvasLayer/Node2D/Clipboard"]
+offset_left = -27.0
+offset_top = -12.999985
+offset_right = 134.0
+offset_bottom = 5.0000153
+scale = Vector2(0.33333334, 0.33333334)
+text = "Verdict:"
+label_settings = SubResource("LabelSettings_ghgqy")
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer/Node2D/Clipboard"]
+offset_left = -20.0
+offset_top = -7.666667
+offset_right = 20.0
+offset_bottom = 10.333337
+text = "Grade: "
+label_settings = SubResource("LabelSettings_woves")
+
+[node name="BlackFade" parent="." instance=ExtResource("20_brbpe")]
+
+[connection signal="toggled" from="EvidencePicking/Panel/ScrollContainer/VBoxContainer/CheckBox" to="." method="_on_check_box_toggled"]
+[connection signal="toggled" from="EvidencePicking/Panel/ScrollContainer/VBoxContainer/CheckBox2" to="." method="_on_check_box_2_toggled"]
+[connection signal="toggled" from="EvidencePicking/Panel/ScrollContainer/VBoxContainer/CheckBox3" to="." method="_on_check_box_3_toggled"]
+[connection signal="toggled" from="EvidencePicking/Panel/ScrollContainer/VBoxContainer/CheckBox4" to="." method="_on_check_box_4_toggled"]
+[connection signal="pressed" from="EvidencePicking/Panel/TextureButton2" to="." method="_on_texture_button_2_pressed"]

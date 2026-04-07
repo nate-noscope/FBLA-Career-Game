@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://cgtf54k0dpos3"]
+[gd_scene load_steps=7 format=3 uid="uid://cgtf54k0dpos3"]
 
 [ext_resource type="Script" uid="uid://r16ba1siw512" path="res://menu_screen.gd" id="1_iefc8"]
 [ext_resource type="Texture2D" uid="uid://dq1aik2f2n8yt" path="res://black-arrow.ase" id="2_ylmtb"]
 [ext_resource type="BitMap" uid="uid://cqpom67ljn5f6" path="res://black-arrow-bitmap.ase" id="3_ylmtb"]
+[ext_resource type="PackedScene" uid="uid://brevdfcw65mb" path="res://black_fade.tscn" id="4_0ft63"]
 
 [sub_resource type="Curve" id="Curve_iefc8"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5174419, 0.6741574), 0.0, 0.0, 0, 0, Vector2(0.9825582, 0), 0.0, 0.0, 0, 0]
@@ -19,58 +20,6 @@ border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 corner_detail = 5
-
-[sub_resource type="Animation" id="Animation_ylmtb"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_iefc8"]
-resource_name = "fade_from_black"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.03333333, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_0ft63"]
-resource_name = "fade_to_black"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_0ft63"]
-_data = {
-&"RESET": SubResource("Animation_ylmtb"),
-&"fade_from_black": SubResource("Animation_iefc8"),
-&"fade_to_black": SubResource("Animation_0ft63")
-}
 
 [node name="MenuScreen" type="Node2D"]
 script = ExtResource("1_iefc8")
@@ -118,20 +67,20 @@ scale_amount_curve = SubResource("Curve_iefc8")
 position = Vector2(320, 180)
 
 [node name="Label" type="Label" parent="."]
-offset_left = 9.0
+offset_left = 57.0
 offset_top = 151.0
-offset_right = 102.0
+offset_right = 150.0
 offset_bottom = 169.0
 scale = Vector2(3, 3)
 text = "I want to be a "
 
 [node name="Label2" type="Label" parent="Label"]
 layout_mode = 0
-offset_left = 80.66662
+offset_left = 64.66664
 offset_top = 0.33333302
-offset_right = 198.66663
+offset_right = 182.66667
 offset_bottom = 18.333332
-text = "stock broker"
+text = "STOCK BROKER"
 horizontal_alignment = 1
 uppercase = true
 
@@ -152,6 +101,7 @@ offset_bottom = 125.0
 scale = Vector2(4, 4)
 texture_normal = ExtResource("2_ylmtb")
 texture_click_mask = ExtResource("3_ylmtb")
+flip_v = true
 
 [node name="Button" type="Button" parent="."]
 offset_left = 281.0
@@ -161,19 +111,7 @@ offset_bottom = 298.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_ylmtb")
 text = "PROCEED"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_0ft63")
-}
-
-[node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-offset_left = -853.0
-offset_top = -467.0
-offset_right = 893.0
-offset_bottom = 507.0
-mouse_filter = 2
-color = Color(0, 0, 0, 1)
+[node name="BlackFade" parent="." instance=ExtResource("4_0ft63")]
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="TextureButton2" to="." method="_on_texture_button_2_pressed"]

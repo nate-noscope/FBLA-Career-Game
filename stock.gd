@@ -38,7 +38,7 @@ func stockTick():
 			slope = -1
 		Globals.MarketTypes.SIDEWAYS:
 			slope = 0.0
-	set_position(Vector2(110.0, 50.0 - (price / GRAPH_SCALE)))
+	set_position(Vector2(90.0, 47.0 - (price / GRAPH_SCALE)))
 	get_children()[0].add_child(TempTracker.instantiate())
 	var noise := rng.randf_range(-instability - Globals.volatility, instability + Globals.volatility)
 	acceleration += noise * 0.05

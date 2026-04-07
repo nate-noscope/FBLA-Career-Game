@@ -16,7 +16,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 config/name="FBLA Career Game"
 run/main_scene="uid://0wn0dbpopb7e"
-config/features=PackedStringArray("4.6", "Forward Plus")
+config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
 [aseprite_importers]
@@ -34,12 +34,11 @@ runtime/balloon_path="res:///balloon.tscn"
 
 [display]
 
-window/size/viewport_width=640
-window/size/viewport_height=360
+window/size/viewport_width=576
+window/size/viewport_height=324
 window/size/mode=3
 window/size/resizable=false
 window/stretch/mode="viewport"
-window/stretch/scale_mode="integer"
 
 [editor_plugins]
 
@@ -60,7 +59,7 @@ click={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://court_case.dialogue", "res://nurse_game_intro.dialogue")
+locale/translations_pot_files=PackedStringArray("res://court_case.dialogue", "res://nurse_game_intro.dialogue", "res://lawyer_game_intro.dialogue")
 
 [rendering]
 

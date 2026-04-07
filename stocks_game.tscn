@@ -1,8 +1,7 @@
-[gd_scene load_steps=57 format=3 uid="uid://cr4p3slfr7doj"]
+[gd_scene load_steps=50 format=3 uid="uid://cr4p3slfr7doj"]
 
 [ext_resource type="Script" uid="uid://cd2f2r5kg201f" path="res://stocks_game.gd" id="1_iy6p4"]
 [ext_resource type="Texture2D" uid="uid://df0wux83clxmy" path="res://newspaper.png" id="1_qfklv"]
-[ext_resource type="Texture2D" uid="uid://4m60esbjbhca" path="res://wood-plank.ase" id="2_b3cog"]
 [ext_resource type="Script" uid="uid://b3ie1terrd1r5" path="res://stock_tracker_1.gd" id="4_ftd38"]
 [ext_resource type="Script" uid="uid://c7iohu32b5rek" path="res://stock_tracker_2.gd" id="5_pve3l"]
 [ext_resource type="Script" uid="uid://bmsvjwhh87a4u" path="res://stock_tracker_3.gd" id="6_pve3l"]
@@ -11,7 +10,6 @@
 [ext_resource type="BitMap" uid="uid://bkdgfy5kw71po" path="res://buy-button-bitmap.png" id="10_3werb"]
 [ext_resource type="Texture2D" uid="uid://cwfskgaa5bhh7" path="res://sell-button.ase1.png" id="10_k2ncs"]
 [ext_resource type="Texture2D" uid="uid://bvjwf4fmmte54" path="res://sell-button.ase2.png" id="11_1kpmc"]
-[ext_resource type="Texture2D" uid="uid://uvt8ortutqmp" path="res://message-icon.ase" id="12_4ygpq"]
 [ext_resource type="FontFile" uid="uid://b63fi4tpf85td" path="res://Born2bSportyV2.ttf" id="14_ky0w0"]
 [ext_resource type="Texture2D" uid="uid://cm5hmrc7r85v1" path="res://hexa-deck-logo.ase" id="15_b5h66"]
 [ext_resource type="Texture2D" uid="uid://d37scunlodld6" path="res://bone-apetit-logo.ase" id="15_ky0w0"]
@@ -52,36 +50,6 @@ font_size = 32
 
 [sub_resource type="LabelSettings" id="LabelSettings_ohhyh"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ymqi6"]
-content_margin_left = 0.0
-content_margin_top = 0.0
-content_margin_right = 0.0
-content_margin_bottom = 0.0
-bg_color = Color(0, 0.73333335, 1, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0, 0, 0, 1)
-corner_detail = 1
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4xc3a"]
-content_margin_left = 0.0
-content_margin_top = 0.0
-content_margin_right = 0.0
-content_margin_bottom = 0.0
-bg_color = Color(1, 1, 1, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0, 0, 0, 1)
-corner_detail = 5
-
-[sub_resource type="LabelSettings" id="LabelSettings_b5h66"]
-font = ExtResource("14_ky0w0")
-font_color = Color(0, 0, 0, 1)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tew1k"]
 content_margin_left = 0.0
 content_margin_top = 0.0
@@ -108,12 +76,12 @@ border_width_bottom = 1
 border_color = Color(0, 0, 0, 1)
 corner_detail = 5
 
-[sub_resource type="LabelSettings" id="LabelSettings_w5rcs"]
-font_color = Color(0, 0, 0, 1)
-
 [sub_resource type="LabelSettings" id="LabelSettings_4xc3a"]
 line_spacing = -6.0
 font = ExtResource("14_ky0w0")
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_w5rcs"]
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ohhyh"]
@@ -131,7 +99,7 @@ font_size = 32
 [sub_resource type="LabelSettings" id="LabelSettings_f14oy"]
 font_size = 32
 
-[sub_resource type="Animation" id="Animation_ohhyh"]
+[sub_resource type="Animation" id="Animation_gjupq"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -143,28 +111,46 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, -263)]
+"values": [Vector2(0, -600)]
 }
 
-[sub_resource type="Animation" id="Animation_4xc3a"]
-resource_name = "end_review"
+[sub_resource type="Animation" id="Animation_t2yty"]
+resource_name = "review"
+length = 10.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath(".:position")
-tracks/0/interp = 2
+tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 1.7666667, 2.8, 3.5, 4.8333335, 5.366667, 6.133333, 6.9, 7.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0, -263), Vector2(0, 74)]
+"values": [Vector2(0, -600), Vector2(0, 89), Vector2(0, 89), Vector2(0, 47), Vector2(0, 47), Vector2(0, 29.005768), Vector2(0, 29.005768), Vector2(0, -8), Vector2(0, -8)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.8666667, 3.7666667),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"check1"
+}, {
+"args": [],
+"method": &"check2"
+}]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_f14oy"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cmnah"]
 _data = {
-&"RESET": SubResource("Animation_ohhyh"),
-&"end_review": SubResource("Animation_4xc3a")
+&"RESET": SubResource("Animation_gjupq"),
+&"review": SubResource("Animation_t2yty")
 }
 
 [sub_resource type="LabelSettings" id="LabelSettings_gb0ot"]
@@ -226,34 +212,14 @@ font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_22hm2"]
 
-[sub_resource type="Animation" id="Animation_tew1k"]
-resource_name = "next_bounce"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("NextArrowIndicator:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.26666668, 0.56666666, 0.8666667, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(131, 35), Vector2(131, 30), Vector2(131, 28), Vector2(131, 30), Vector2(131, 35)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_4xc3a"]
-_data = {
-&"next_bounce": SubResource("Animation_tew1k")
-}
-
 [node name="StocksGame" type="Node2D"]
 script = ExtResource("1_iy6p4")
 
 [node name="BalanceArea" type="Panel" parent="."]
-offset_left = -160.0
-offset_top = -90.0
+offset_left = -144.0
+offset_top = -81.0
 offset_right = -45.0
-offset_bottom = -61.0
+offset_bottom = -53.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_w5rcs")
 
 [node name="LaurelBalance" type="Sprite2D" parent="BalanceArea"]
@@ -262,10 +228,10 @@ texture = ExtResource("18_ymqi6")
 
 [node name="BalanceLabel" type="Label" parent="BalanceArea"]
 layout_mode = 0
-offset_left = 40.99997
-offset_top = -5.0
-offset_right = 130.99997
-offset_bottom = 31.0
+offset_left = 27.0
+offset_top = -6.0
+offset_right = 117.0
+offset_bottom = 30.0
 scale = Vector2(0.8, 0.8)
 text = "$200.00"
 label_settings = SubResource("LabelSettings_tew1k")
@@ -274,87 +240,39 @@ vertical_alignment = 1
 
 [node name="LiquidAssetsLabel" type="Label" parent="BalanceArea"]
 layout_mode = 0
-offset_left = 83.0
-offset_top = 18.0
-offset_right = 214.0
-offset_bottom = 54.0
+offset_left = 69.0
+offset_top = 17.0
+offset_right = 200.0
+offset_bottom = 53.0
 scale = Vector2(0.5, 0.5)
 text = "($200.00)"
 label_settings = SubResource("LabelSettings_ohhyh")
 
-[node name="MessageArea" type="Panel" parent="."]
-offset_left = -160.0
-offset_top = -61.0
-offset_right = -45.0
-offset_bottom = -24.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_ymqi6")
-
-[node name="ClientTextBox" type="Panel" parent="MessageArea"]
-layout_mode = 0
-offset_left = 3.0
-offset_top = 20.0
-offset_right = 85.0
-offset_bottom = 33.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_4xc3a")
-
-[node name="MarginContainer" type="MarginContainer" parent="MessageArea/ClientTextBox"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.012
-anchor_top = 0.07700001
-anchor_right = 0.98800004
-anchor_bottom = 0.92300004
-offset_left = 0.015996158
-offset_top = -0.0010000467
-offset_right = 79.98399
-offset_bottom = 11.000999
-grow_horizontal = 2
-grow_vertical = 0
-scale = Vector2(0.5, 0.5)
-
-[node name="Label" type="Label" parent="MessageArea/ClientTextBox/MarginContainer"]
-layout_mode = 2
-label_settings = SubResource("LabelSettings_b5h66")
-autowrap_mode = 2
-
-[node name="MessageIcon" type="Sprite2D" parent="MessageArea"]
-position = Vector2(14, 10)
-texture = ExtResource("12_4ygpq")
-
 [node name="NewsArea" type="Panel" parent="."]
-offset_left = -160.0
-offset_top = -24.0
-offset_right = -76.0
-offset_bottom = 89.0
+offset_left = -144.0
+offset_top = -54.0
+offset_right = -45.0
+offset_bottom = 81.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_tew1k")
 
 [node name="Newspaper" type="Sprite2D" parent="NewsArea"]
-position = Vector2(16, 16)
+position = Vector2(16, 14)
 texture = ExtResource("1_qfklv")
 
 [node name="Panel" type="Panel" parent="NewsArea"]
 layout_mode = 0
 offset_left = 31.0
-offset_right = 115.0
-offset_bottom = 35.0
+offset_right = 94.0
+offset_bottom = 29.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_b5h66")
-
-[node name="Headline" type="Label" parent="NewsArea/Panel"]
-layout_mode = 0
-offset_left = -29.0
-offset_top = 35.0
-offset_right = 193.0
-offset_bottom = 179.0
-scale = Vector2(0.5, 0.5)
-label_settings = SubResource("LabelSettings_w5rcs")
-autowrap_mode = 2
 
 [node name="Label" type="Label" parent="NewsArea/Panel"]
 layout_mode = 0
 offset_left = 1.0
-offset_top = 1.0
-offset_right = 58.0
-offset_bottom = 47.0
+offset_top = 0.9999995
+offset_right = 82.33334
+offset_bottom = 38.333336
+scale = Vector2(0.75, 0.75)
 text = "The
 FBLA
 Journal"
@@ -363,19 +281,20 @@ autowrap_mode = 3
 
 [node name="Panel2" type="Panel" parent="NewsArea"]
 layout_mode = 0
-offset_top = 35.0
-offset_right = 115.0
-offset_bottom = 114.0
+offset_left = 4.0
+offset_top = 28.0
+offset_right = 94.0
+offset_bottom = 134.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_b5h66")
 
 [node name="Headline" type="Label" parent="NewsArea/Panel2"]
 layout_mode = 0
 offset_left = 1.0
 offset_top = 1.0
-offset_right = 227.0
-offset_bottom = 155.0
+offset_right = 177.0
+offset_bottom = 209.0
 scale = Vector2(0.5, 0.5)
-text = "No news yet."
+text = "No news yet. "
 label_settings = SubResource("LabelSettings_w5rcs")
 horizontal_alignment = 1
 autowrap_mode = 2
@@ -383,28 +302,27 @@ autowrap_mode = 2
 [node name="NewsTimer" type="Timer" parent="NewsArea"]
 wait_time = 10.0
 
-[node name="StocksArea" type="TextureRect" parent="."]
+[node name="StocksArea" type="ColorRect" parent="."]
 offset_left = -45.0
 offset_top = -90.0
-offset_right = 211.0
-offset_bottom = 90.0
-texture = ExtResource("2_b3cog")
-stretch_mode = 1
+offset_right = 144.0
+offset_bottom = 81.0
+color = Color(0.30588236, 0.30588236, 0.46666667, 1)
 
 [node name="StockBg1" type="Panel" parent="StocksArea"]
 layout_mode = 0
 offset_left = 86.0
 offset_top = 9.952
-offset_right = 203.0
-offset_bottom = 59.951996
+offset_right = 186.0
+offset_bottom = 56.952
 theme_override_styles/panel = SubResource("StyleBoxFlat_ohhyh")
 
 [node name="StockTracker1" type="ColorRect" parent="StocksArea/StockBg1"]
 layout_mode = 0
-offset_left = 109.999954
-offset_top = 40.0
-offset_right = 111.999954
-offset_bottom = 42.0
+offset_left = 98.0
+offset_top = 39.809
+offset_right = 100.0
+offset_bottom = 41.809
 color = Color(0, 1, 0, 1)
 script = ExtResource("4_ftd38")
 fair_value = 30.0
@@ -434,15 +352,15 @@ texture_pressed = ExtResource("11_1kpmc")
 texture_click_mask = ExtResource("10_3werb")
 
 [node name="8BallLogo" type="Sprite2D" parent="StocksArea/StockBg1"]
-position = Vector2(-29.380957, 8.095238)
+position = Vector2(-29.380957, 17.095238)
 texture = ExtResource("16_b5h66")
 
 [node name="8BallPriceLabel" type="Label" parent="StocksArea/StockBg1"]
 layout_mode = 0
 offset_left = -50.000008
-offset_top = 22.761902
+offset_top = 30.761902
 offset_right = -10.000008
-offset_bottom = 54.7619
+offset_bottom = 62.7619
 scale = Vector2(0.5, 0.5)
 text = "$"
 label_settings = SubResource("LabelSettings_ymqi6")
@@ -463,15 +381,15 @@ horizontal_alignment = 1
 layout_mode = 0
 offset_left = 86.0
 offset_top = 63.191
-offset_right = 203.0
-offset_bottom = 113.190994
+offset_right = 186.0
+offset_bottom = 110.191
 theme_override_styles/panel = SubResource("StyleBoxFlat_ohhyh")
 
 [node name="StockTracker2" type="ColorRect" parent="StocksArea/StockBg2"]
 layout_mode = 0
-offset_left = 88.0
+offset_left = 98.0
 offset_top = 39.809
-offset_right = 90.0
+offset_right = 100.0
 offset_bottom = 41.809
 color = Color(0, 1, 0, 1)
 script = ExtResource("5_pve3l")
@@ -533,16 +451,16 @@ texture = ExtResource("15_b5h66")
 layout_mode = 0
 offset_left = 86.0
 offset_top = 120.0
-offset_right = 203.0
-offset_bottom = 170.0
+offset_right = 186.0
+offset_bottom = 167.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_ohhyh")
 
 [node name="StockTracker3" type="ColorRect" parent="StocksArea/StockBg3"]
 layout_mode = 0
-offset_left = 107.0
-offset_top = 41.000004
-offset_right = 109.0
-offset_bottom = 43.000004
+offset_left = 98.0
+offset_top = 39.809
+offset_right = 100.0
+offset_bottom = 41.809
 color = Color(0, 1, 0, 1)
 script = ExtResource("6_pve3l")
 fair_value = 20.0
@@ -563,16 +481,16 @@ texture_click_mask = ExtResource("10_3werb")
 [node name="BoneApetitSell" type="TextureButton" parent="StocksArea/StockBg3"]
 layout_mode = 0
 offset_left = -100.90477
-offset_top = 12.380943
+offset_top = 9.380943
 offset_right = -36.90477
-offset_bottom = 76.38094
+offset_bottom = 73.38094
 disabled = true
 texture_normal = ExtResource("10_k2ncs")
 texture_pressed = ExtResource("11_1kpmc")
 texture_click_mask = ExtResource("10_3werb")
 
 [node name="BoneApetitLogo" type="Sprite2D" parent="StocksArea/StockBg3"]
-position = Vector2(-26.047615, 30.761902)
+position = Vector2(-26.047615, 31.761902)
 texture = ExtResource("15_ky0w0")
 
 [node name="BoneApetitPriceLabel" type="Label" parent="StocksArea/StockBg3"]
@@ -605,10 +523,10 @@ zoom = Vector2(2, 2)
 
 [node name="TimeLabel" type="Label" parent="."]
 z_index = 1
-offset_left = 126.0
-offset_top = -94.0
-offset_right = 194.0
-offset_bottom = -58.0
+offset_left = 109.0
+offset_top = -83.0
+offset_right = 177.0
+offset_bottom = -47.0
 scale = Vector2(0.5, 0.5)
 text = " 120.0"
 label_settings = SubResource("LabelSettings_f14oy")
@@ -623,13 +541,13 @@ texture = ExtResource("18_w5rcs")
 
 [node name="Clipboard" type="Sprite2D" parent="."]
 z_index = 1
-position = Vector2(0, -263)
+position = Vector2(0, -600)
 scale = Vector2(3, 3)
 texture = ExtResource("19_4xc3a")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Clipboard"]
 libraries = {
-&"": SubResource("AnimationLibrary_f14oy")
+&"": SubResource("AnimationLibrary_cmnah")
 }
 
 [node name="Label" type="Label" parent="Clipboard"]
@@ -667,7 +585,7 @@ offset_left = 10.0
 offset_top = -9.0
 offset_right = 143.0
 offset_bottom = 9.0
-text = "Total money did not dip below $50"
+text = "Total funds did not dip below $50"
 label_settings = SubResource("LabelSettings_momay")
 
 [node name="Label2" type="Label" parent="Clipboard"]
@@ -681,10 +599,10 @@ label_settings = SubResource("LabelSettings_momay")
 
 [node name="ScoreLabel" type="Label" parent="Clipboard"]
 offset_left = -20.0
-offset_top = 21.666668
+offset_top = -7.666667
 offset_right = 20.0
-offset_bottom = 39.66667
-text = "Score:"
+offset_bottom = 10.333337
+text = "Grade: "
 label_settings = SubResource("LabelSettings_t2yty")
 
 [node name="IntroTextBox" type="TextureRect" parent="."]
@@ -710,12 +628,8 @@ position = Vector2(131, 35)
 texture = ExtResource("20_tew1k")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="IntroTextBox"]
-libraries = {
-&"": SubResource("AnimationLibrary_4xc3a")
-}
 
 [node name="BlackFade" parent="." instance=ExtResource("33_gjupq")]
-visible = false
 
 [connection signal="timeout" from="NewsArea/NewsTimer" to="." method="_on_news_timer_timeout"]
 [connection signal="pressed" from="StocksArea/StockBg1/EightBallBuy" to="." method="_on_eight_ball_buy_pressed"]

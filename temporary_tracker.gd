@@ -1,6 +1,6 @@
 extends ColorRect
 
-const MAXTICKS := 54
+const MAXTICKS := 40
 
 var ticks := 0
 

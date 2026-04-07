@@ -1,14 +1,8 @@
 extends Node2D
 
 
-var careers := ["STOCK BROKER", "NURSE PRACTITIONER", "LAWYER"]
+var careers := ["STOCK BROKER", "NURSE", "LAWYER"]
 var current := 0
-
-func _ready() -> void:
-	$TextureButton2.flip_v = true
-	$ColorRect.show()
-	$AnimationPlayer.play("fade_from_black")
-
 
 func _on_texture_button_pressed() -> void:
 	print("pressed")
@@ -24,9 +18,8 @@ func _on_texture_button_2_pressed() -> void:
 		current = 2
 	$Label/Label2.text = careers[current]
 
-
 func _on_button_pressed() -> void:
-	$AnimationPlayer.play("fade_to_black")
+	$BlackFade/AnimationPlayer.play("fade_to_black")
 	await get_tree().create_timer(1.0).timeout
 	match current:
 		0:

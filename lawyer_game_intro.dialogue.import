@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://c15gxu4qtsllg"
+path="res://.godot/imported/lawyer_game_intro.dialogue-07c004a5dfaab017605260c1abea5c47.tres"
+
+[deps]
+
+source_file="res://lawyer_game_intro.dialogue"
+dest_files=["res://.godot/imported/lawyer_game_intro.dialogue-07c004a5dfaab017605260c1abea5c47.tres"]
+
+[params]
+
+defaults=true

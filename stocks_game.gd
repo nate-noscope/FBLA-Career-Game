@@ -63,7 +63,6 @@ var stories := ["This just in: gamers are getting tired of being exploited, sale
 var currentStory : int
 
 func _ready() -> void:
-	$BlackFade/AnimationPlayer.play("fade_from_black")
 	playIntroStep()
 
 func _process(delta: float) -> void:
@@ -96,8 +95,8 @@ func _process(delta: float) -> void:
 				if texts[introStep].length() > current_char:
 					$IntroTextBox/Label.text += texts[introStep][current_char]
 				current_char += 1
-		else:
-			$IntroTextBox/AnimationPlayer.play("next_bounce")
+		#else:
+			#$IntroTextBox/AnimationPlayer.play("next_bounce")
 
 func playIntroStep():
 	$IntroTextBox/Label.text = ""
@@ -134,26 +133,41 @@ func playIntroStep():
 			$StocksArea/StockBg3/BoneApetitSell.disabled = false
 
 func playEnding():
-	$Clipboard/AnimationPlayer.play("end_review")
+	$Clipboard/AnimationPlayer.play("review")
 	isTicking = false
+	$StocksArea/Timer.stop()
 	outroPlaying = true
-	await get_tree().create_timer(2.0).timeout
-	if balance > 200.0:
-		$Clipboard/Checkbox.play("check")
-	else:
-		$Clipboard/Checkbox.play("cross")
-	await get_tree().create_timer(2.0).timeout
-	if !dippedBelow:
-		$Clipboard/Checkbox2.play("check")
-	else:
-		$Clipboard/Checkbox2.play("cross")
-	await get_tree().create_timer(2.0).timeout
+	await get_tree().create_timer(6.0).timeout
 	$Clipboard/Label2.text = "Final balance + stocks: $" + str(snapped(balance, 0.01))
 	await get_tree().create_timer(2.0).timeout
-	$Clipboard/ScoreLabel.text = "Your score: " + str(calculateScore())
+	var grade := "F"
+	var score := calculateScore()
+	if score >= 300:
+		grade = "A+"
+	elif score >= 275:
+		grade = "A"
+	elif score >= 250:
+		grade = "A-"
+	elif score >= 225:
+		grade = "B+"
+	elif score >= 200:
+		grade = "B"
+	elif score >= 175:
+		grade = "B-"
+	elif score >= 150:
+		grade = "C"
+	elif score >= 125:
+		grade = "C-"
+	else:
+		grade = "D"
+	$Clipboard/ScoreLabel.text = "Grade: " + grade
 	gameFinished = true
+	await get_tree().create_timer(2.0).timeout
+	$BlackFade/AnimationPlayer.play("fade_to_black")
+	await $BlackFade/AnimationPlayer.animation_finished
+	get_tree().change_scene_to_file("res://menu_screen.tscn")
 
-func calculateScore():
+func calculateScore() -> int:
 	var score := 0.0
 	score += balance
 	if balance > 200.0:
@@ -161,6 +175,19 @@ func calculateScore():
 	if dippedBelow:
 		score -= 75
 	return snapped(score, 1)
+
+#check func (can be used for any checkbox)
+func checkBox(box : AnimatedSprite2D, satisfied := false):
+	if satisfied:
+		box.play("check")
+	else:
+		box.play("cross")
+
+func check1():
+	checkBox($Clipboard/Checkbox, balance > 200)
+
+func check2():
+	checkBox($Clipboard/Checkbox2, not dippedBelow)
 
 func _on_timer_timeout() -> void:
 	EightBallTracker.stockTick()
@@ -223,7 +250,6 @@ func _on_hexa_deck_sell_pressed() -> void:
 		balance += HexaDeckTracker.price
 		HexaDeckShares -= 1
 		HexaDeckSharesLabel.text = str(HexaDeckShares)
-
 
 func _on_bone_apetit_buy_pressed() -> void:
 	if balance >= BoneApetitTracker.price:
