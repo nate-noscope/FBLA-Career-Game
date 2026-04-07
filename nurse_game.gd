@@ -35,11 +35,10 @@ Both palms have minor scrapes with no deep cuts or bleeding. The skin is intact 
 ]
 
 func _ready() -> void:
-	playEnding()
-	#var balloon := DialogueManager.show_dialogue_balloon(load("res://nurse_game_intro.dialogue"), "start")
-	#balloon.tree_exited.connect(func():
-		#$ColorRect.hide()
-		#isTicking = true)
+	var balloon := DialogueManager.show_dialogue_balloon(load("res://nurse_game_intro.dialogue"), "start")
+	balloon.tree_exited.connect(func():
+		$ColorRect.hide()
+		isTicking = true)
 	$PatientNotes/ScrollContainer/NotesLabel.text = soaps[0]
 
 func _process(delta: float) -> void:
