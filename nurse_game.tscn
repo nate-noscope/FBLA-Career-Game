@@ -776,7 +776,6 @@ mouse_filter = 2
 color = Color(0, 0, 0, 0.56078434)
 
 [node name="BlackFade" parent="." instance=ExtResource("22_o1i83")]
-visible = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
